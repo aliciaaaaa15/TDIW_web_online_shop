@@ -1,0 +1,141 @@
+/*#carrito_lateral {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}*/
+
+#carrito_lateral {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* BLOQUE IZQUIERDO: PRODUCTOS */
+#sep_espacial_car_lateral {
+    width: 75%;
+    flex-shrink: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #fafafa;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#sep_productos_car_lateral {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    white-space: nowrap;
+}
+
+.carrito-item-lateral {
+    min-width: 200px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* BLOQUE DERECHO: RESUMEN */
+#sep_car_lateral {
+    width: 25%;
+    flex-shrink: 0;
+    background: #f4f4f4;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+
+  #carrito_lateral{
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  /* Productos: ocupan el espacio disponible y scrollean en horizontal */
+  #sep_espacial_car_lateral{
+    width: auto;
+    flex: 1 1 auto;
+    padding: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  /* Resumen: columna compacta a la derecha */
+  #sep_car_lateral{
+    width: 170px; 
+    min-width: 170px;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px;
+  }
+
+  #sep_button_car_lateral .btn-comprar{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1560px) {
+  /* Solo cambia el bloque de resumen (derecha) */
+  #sep_car_lateral {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  /* El botón debajo, ocupando todo el ancho */
+  #sep_button_car_lateral .btn-comprar {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+#carrito_spacer{
+  height: 0;
+}
+
+body.con-carrito #carrito_spacer{
+  height: 190px; /* altura fija del carrito */
+}
+
+#carrito_lateral.oculto {
+    display: none !important;
+}

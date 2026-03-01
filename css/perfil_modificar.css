@@ -1,0 +1,438 @@
+/* =========================
+   MODIFICAR PERFIL
+========================= */
+
+.contenedor-perfil-modificacion {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #f7fff8;
+    border: 2px solid #d6f5d8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(129, 199, 132, 0.25);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contenedor-perfil-modificacion h2 {
+    text-align: center;
+    color: #246424;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #d6f5d8;
+}
+
+/* ---------- Formulario ---------- */
+
+.formulario-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #246424;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #fdfdfd;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #66c27e;
+    box-shadow: 0 0 0 3px rgba(102, 194, 126, 0.2);
+    background: #ffffff;
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #f44336;
+}
+
+.form-group input:valid:not(:focus) {
+    border-color: #4CAF50;
+}
+
+.form-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ---------- Botones ---------- */
+
+.botones-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.boton-verde {
+    flex: 1;
+    padding: 14px;
+    background: linear-gradient(135deg, #66c27e, #5ab872);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.boton-verde:hover:not(:disabled) {
+    background: linear-gradient(135deg, #5ab872, #66c27e);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 194, 126, 0.3);
+}
+
+.boton-verde:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.boton-verde:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.boton-transparente {
+    flex: 1;
+    padding: 14px;
+    background: #fff0f0;
+    color: #d9534f;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-transparente:hover {
+    background: #ffcccc;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(217, 83, 79, 0.2);
+}
+
+.boton-transparente:active {
+    transform: translateY(0);
+}
+
+/* ---------- Spinner ---------- */
+
+#cargandoBoton i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ---------- Mensajes de validación ---------- */
+
+input:invalid {
+    border-color: #f44336;
+}
+
+input:valid {
+    border-color: #4CAF50;
+}
+
+/* Para mensajes personalizados */
+.error-message {
+    color: #f44336;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+input:invalid + .error-message {
+    display: block;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    .contenedor-perfil-modificacion {
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    .contenedor-perfil-modificacion h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .botones-container {
+        flex-direction: column;
+    }
+    
+    .boton-verde,
+    .boton-transparente {
+        width: 100%;
+    }
+    
+    .form-group input {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ---------- Estados de los campos ---------- */
+
+.form-group input:focus:valid {
+    background-color: #f7fff8;
+    border-color: #4CAF50;
+}
+
+.form-group input:focus:invalid {
+    background-color: #fff8f8;
+    border-color: #f44336;
+}
+
+/* Para campos requeridos */
+.form-group label::after {
+    content: " *";
+    color: #f44336;
+    font-weight: bold;
+}
+
+.form-group label[for="direccion"]::after,
+.form-group label[for="poblacion"]::after,
+.form-group label[for="codigo_postal"]::after {
+    content: "";
+}
+
+/* ---------- Efectos de transición ---------- */
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Placeholder styling ---------- */
+
+.form-group input::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* ---------- Ajuste para formulario largo ---------- */
+
+.contenedor-perfil-modificacion {
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #66c27e #f7fff8;
+}
+
+.contenedor-perfil-modificacion::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contenedor-perfil-modificacion::-webkit-scrollbar-track {
+    background: #f7fff8;
+    border-radius: 4px;
+}
+
+.contenedor-perfil-modificacion::-webkit-scrollbar-thumb {
+    background: #66c27e;
+    border-radius: 4px;
+}
+
+.contenedor-perfil-modificacion::-webkit-scrollbar-thumb:hover {
+    background: #5ab872;
+}
+
+/* ---------- Iconos opcionales (si añades Font Awesome) ---------- */
+
+.form-group label i {
+    margin-right: 8px;
+    color: #66c27e;
+}
+
+/* ---------- Para pantallas muy pequeñas ---------- */
+
+@media (max-width: 400px) {
+    .contenedor-perfil-modificacion {
+        padding: 15px;
+    }
+    
+    .contenedor-perfil-modificacion h2 {
+        font-size: 1.4rem;
+    }
+    
+    .form-group input {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/*.contenedor-editor-img-perfil {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}*/
+
+/*.contenedor-editor-img-perfil::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}*/
+
+
+/* Fondo semitransparente que cubre toda la pantalla */
+.contenedor-editor-img-perfil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Caja principal de la ventana */
+.contenedor-componentes-edit-foto {
+    background: #f7fff8;
+    border: 2px solid #d6f5d8;
+    border-radius: 16px;
+    padding: 25px;
+    width: 360px;
+
+    box-shadow: 0 6px 18px rgba(129, 199, 132, 0.25);
+    animation: fadeInUp 0.35s ease;
+    text-align: center;
+}
+
+/* Título */
+.contenedor-componentes-edit-foto h3 {
+    color: #246424;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #d6f5d8;
+    padding-bottom: 10px;
+}
+
+/* Input de archivo */
+#profile_image {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cfe9d1;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+#profile_image:hover {
+    border-color: #66c27e;
+}
+
+/* Botones */
+.contenedor-botones-edit-foto {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+#subir-foto-perfil {
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #66c27e, #5ab872);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+#subir-foto-perfil:hover {
+    background: linear-gradient(135deg, #5ab872, #66c27e);
+    transform: translateY(-2px);
+}
+
+.contenedor-botones-edit-foto button[type="button"] {
+    padding: 10px 18px;
+    background: #fff0f0;
+    color: #d9534f;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.contenedor-botones-edit-foto button[type="button"]:hover {
+    background: #ffcccc;
+    transform: translateY(-2px);
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

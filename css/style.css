@@ -1,0 +1,8 @@
+@import url("inicio.css");
+@import url("encabezado.css");
+@import url("usuario.css");
+@import url("producto.css");
+@import url("carrito.css");
+@import url(carrito_lateral.css);
+@import url(perfil_modificar.css);
+@import url(compra.css);

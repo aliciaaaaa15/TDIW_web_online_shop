@@ -1,0 +1,49 @@
+// public/js/carrito.js (fragmento modificado)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.agregarCarrito').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const card = e.target.closest('.producto');
+      const id = parseInt(card.dataset.id, 10);
+      const precio = parseFloat(card.dataset.precio);
+      const cantidadInput = card.querySelector('.cantidad');
+      const cantidad = Math.max(1, parseInt(cantidadInput?.value || '1', 10));
+
+      const formData = new FormData();
+      formData.append('id_producto', id);
+      formData.append('precio', precio);
+      formData.append('cantidad', cantidad);
+
+      btn.disabled = true;
+      try {
+        const res = await fetch('/?route=carrito_add', {
+          method: 'POST',
+          body: formData,
+          credentials: 'same-origin'
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data?.error || 'Error');
+
+        // Actualizar contador en la cabecera y mostrar toast
+        const contadorElem = document.querySelector('#cart-counter');
+        if (contadorElem && typeof data.contador !== 'undefined') {
+          contadorElem.textContent = data.contador;
+        }
+        // Mostrar feedback no intrusivo
+        showToast('Producto añadido al carrito');
+      } catch (err) {
+        showToast('No se pudo añadir al carrito', true);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  });
+});
+
+// Ejemplo simple de toast
+function showToast(msg, isError = false) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style = `position:fixed;right:20px;bottom:20px;padding:10px 14px;background:${isError?'#c00':'#080'};color:#fff;border-radius:6px;`;
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(), 2500);
+}

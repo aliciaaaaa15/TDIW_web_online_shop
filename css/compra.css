@@ -1,0 +1,68 @@
+/* Contenedor general */
+.contenedor-historial-compras {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Título */
+.contenedor-historial-compras h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2f6f4e; /* Verde suave */
+    text-align: center;
+}
+
+/* Tabla */
+.tabla-compras {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Cabecera */
+.tabla-compras thead {
+    background: #2f6f4e; /* Verde oscuro suave */
+    color: white;
+}
+
+.tabla-compras th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Filas */
+.tabla-compras tbody tr {
+    background: #f8fdf9; /* Verde muy claro */
+    border-bottom: 1px solid #dceee3;
+    transition: background 0.2s ease;
+}
+
+.tabla-compras tbody tr:hover {
+    background: #e9f7ef; /* Hover verde suave */
+}
+
+/* Celdas */
+.tabla-compras td {
+    padding: 12px 14px;
+    color: #333;
+}
+
+/* Texto de detalles */
+.tabla-compras td:last-child {
+    font-size: 15px;
+    color: #2f6f4e;
+}
+
+/* Mensaje cuando no hay compras */
+.contenedor-historial-compras p {
+    text-align: center;
+    color: #666;
+    font-size: 17px;
+}

@@ -1,0 +1,389 @@
+.productos-container, .productos-encabezado {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Tí­tulo de categorí­a */
+.productos-encabezado {
+  margin-top: 20px;
+}
+
+.productos-encabezado p{
+  margin-top: 10px;
+}
+
+/* Grid de productos */
+.lista-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .lista-productos {
+    justify-content: center;
+  }
+}
+
+/* Tarjeta de producto */
+.producto, .producto-promo{
+  display: flex;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+
+.producto {
+  width: 250px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Imagen del producto */
+.producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Nombre del producto */
+.producto h3 {
+  font-size: 1rem;
+  color: black;
+  margin-top: 10px;
+  height: 40px;
+  overflow: hidden;
+}
+
+/* Precio */
+.producto p {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Botón */
+.producto button {
+  background-color: #007A33; /* verde oscuro */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  font-weight: bold;
+}
+
+.producto button:hover {
+  background-color: #005f26;
+}
+
+
+.lista-productos-promo {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;       /* Scroll horizontal */
+  padding: 10px;
+  white-space: nowrap;
+  justify-content: space-evenly;
+}
+
+.producto-promo {
+  justify-content: space-between;
+  flex: 0 0 auto;
+  width: 180px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow: hidden;   
+  text-overflow: ellipsis;    
+  white-space: normal;         
+  word-wrap: break-word;      
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+  padding: 12px;
+}
+
+
+.producto-promo img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.producto-promo h3 {
+  font-size: 1rem;
+  color: black;
+  height: 40px;
+  overflow: hidden;
+  height: 40px;
+  overflow: hidden;
+  margin: 6px 0 2px 0;
+  line-height: 1.15;
+}
+
+.producto-img{
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.producto-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.producto .detalle-precio{
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+
+
+.producto-promo p {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.producto-promo .boton-carrito {
+  margin-top: auto; 
+  width: 100%;
+}
+.producto-promo button {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+
+.producto-promo .precio-original {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+  margin-right: 6px;
+}
+
+.producto-promo .precio-rebajado {
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.producto-promo .promo {
+  margin: 4px 0 8px 0;
+}
+
+.producto-promo .producto-info{
+  margin-bottom: 6px;
+}
+
+.producto-promo .promo-nombre{
+  margin: 6px 0 2px 0;
+  line-height: 1.15;
+}
+
+.producto-promo .producto-precio{
+  margin: 0;
+}
+
+.producto-promo .detalle-precio{
+  margin: 0;
+  display: block;
+  line-height: 1.15;
+}
+
+.producto-promo .detalle-precio{
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.producto-promo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.promo p, .promo {
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+/* Scrollbar opcional */
+.productos-promocionales::-webkit-scrollbar {
+  height: 8px;
+}
+.productos-promocionales::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.productos-promocionales::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.producto-promo h3,
+.producto-promo p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.2;
+  max-height: 3em;              
+  overflow: hidden;
+}
+
+
+
+
+.detalle-producto-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detalle-producto {
+  display: flex;
+  gap: 2rem;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.detalle-imagen img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 900px) {
+  .detalle-producto {
+    gap: 1.5rem;
+    padding: 15px;
+  }
+
+  .detalle-imagen img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detalle-producto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .detalle-imagen img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .detalle-info {
+    width: 100%;
+    align-items: center;
+  }
+
+  .boton-carrito, .boton-carrito-productos {
+    justify-content: center;
+  }
+}
+
+.detalle-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detalle-nombre {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.detalle-descripcion {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.detalle-precio {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.precio-rebajado {
+  color: red;
+  font-weight: bold;
+}
+
+.precio-normal {
+  font-weight: bold;
+  color: #333;
+}
+
+.boton-carrito, .detalle-carrito-detalles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boton-carrito input[type="number"], 
+.detalle-carrito-detalles input[type="number"]{
+  width: 60px;
+  padding: 4px;
+}
+
+.boton-carrito button , .detalle-carrito-detalles button{
+  padding: 6px 12px;
+  background-color: #007A33;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton-carrito button:hover, .detalle-carrito-detalles button:hover {
+  background-color: #005f26;
+}

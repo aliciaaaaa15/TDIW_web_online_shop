@@ -1,0 +1,426 @@
+
+/* Contenedor login, registro*/
+.login-box, .registro-box{
+  margin: 60px auto;
+  padding: 28px 32px;
+  background: #f7fff8; 
+  border-radius: 18px;
+  border: 2px solid #d7f5d8;
+  box-shadow: 0 6px 18px rgba(129, 199, 132, 0.25);
+}
+
+.login-box{
+  max-width: 380px;
+}
+.registro-box{
+  max-width: 420px;
+}
+
+.login-box::before, .registro-box::before {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.login-box::before{
+  content: "🌵";
+}
+.registro-box::before{
+  content: "🌱";
+}
+
+.login-box .error, .registro-box .error {
+  background: #ffe5e5;
+  color: #d11a1a;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 5px solid #ff4444;
+  margin-bottom: 18px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-box .error::before, 
+.registro-box .error::before {
+  content: "❗";
+  font-size: 18px;
+}
+
+.login-box header h3, .registro-box header h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4aa366;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 6px;
+  color: #55aa6b;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"],
+.registro-box input[type="text"],
+.registro-box input[type="email"],
+.registro-box input[type="password"],
+.registro-box input[type="direccion"],
+.registro-box input[type="poblacion"],
+.registro-box input[type="cp"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 2px solid #c5ecc9;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: 0.25s ease;
+  background: #ffffff;
+}
+
+.login-box input:focus, .registro-box input:focus {
+  border-color: #78ce8b;
+  box-shadow: 0 0 6px rgba(97, 179, 113, 0.45);
+  outline: none;
+}
+
+.login-box button[type="submit"], 
+.registro-box button[type="submit"],
+.registro-exitoso-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #66c27e, #5ab872);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.login-box button[type="submit"]::before {
+  content: "🌿";
+  font-size: 18px;
+}
+.registro-box button[type="submit"]::before{
+  content: "🌵";
+  font-size: 18px;
+}
+
+.login-box button[type="submit"]:hover,
+.registro-box button[type="submit"]:hover,
+.registro-exitoso-box button:hover {
+  background: linear-gradient(135deg, #5ab872, #66c27e);
+  transform: translateY(-2px);
+}
+
+.login-box button[type="submit"]:active,
+.registro-box button[type="submit"]:active,
+.registro-exitoso-box button:active {
+  transform: scale(0.96);
+}
+
+.login-box p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.registro-box p {
+  color: #555;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.login-box p a {
+  color: #4aa366;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-box p a:hover {
+  text-decoration: underline;
+}
+
+
+
+.registro-exitoso-box {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 30px 36px;
+  background: #f3fff4; 
+  border: 2px solid #d6f5d8;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(129, 199, 132, 0.25);
+  text-align: center;
+  position: relative;
+}
+
+.registro-exitoso-box::before {
+  content: "🌵🎉";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 42px;
+}
+
+.registro-exitoso-box h3 {
+  color: #49a367;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.registro-exitoso-box p {
+  color: #4e4e4e;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* Agrupacion de botones */
+.registro-exitoso-box .accionesRegistro {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.registro-exitoso-box button {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #66c27e, #5ab872);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.registro-exitoso-box button:hover {
+  background: linear-gradient(135deg, #5ab872, #66c27e);
+  transform: translateY(-2px);
+}
+
+.registro-exitoso-box button:active {
+  transform: scale(0.96);
+}
+
+
+/* Caja general del perfil */
+.perfil-usuario-box {
+  max-width: 500px;
+  margin: 70px auto;
+  padding: 30px 36px;
+  background: #f3fff4;
+  border: 2px solid #d6f5d8;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(129, 199, 132, 0.25);
+  position: relative;
+}
+
+/* Cactus decorativo */
+.perfil-usuario-box::before {
+  content: "🌵";
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 42px;
+}
+
+/* Bloque de datos */
+.perfil-datos h4 {
+  color: #49a367;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil-datos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.perfil-datos li {
+  background: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #e3f7e4;
+  box-shadow: 0 2px 6px rgba(129, 199, 132, 0.15);
+  color: #4b4b4b;
+  font-size: 15px;
+}
+
+.perfil-datos li strong {
+  color: #3d8b59;
+}
+
+/* Botón de cerrar sesión */
+.perfil-acciones {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.perfil-acciones button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #66c27e, #5ab872);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.perfil-acciones button:hover {
+  background: linear-gradient(135deg, #5ab872, #66c27e);
+  transform: translateY(-2px);
+}
+
+.perfil-acciones button:active {
+  transform: scale(0.96);
+}
+
+/* CONTENEDOR GENERAL */
+.perfil-configuraciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* FOTO DE PERFIL ARRIBA */
+.perfil-foto img {
+    width: 130px;          /* ancho */
+    height: 130px;         /* alto (igual que ancho) */
+    border-radius: 50%;    /* convierte el cuadrado en un círculo */
+    object-fit: cover;     /* evita deformaciones */
+    border: 3px solid #4CAF50; /* borde verde opcional */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+
+
+/* CONTENEDOR DE LOS DOS BOTONES ABAJO */
+.perfil-configuraciones-modificaciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* separación entre botones */
+    width: 100%;
+}
+
+/* BOTONES */
+.perfil-configuraciones-modificaciones button {
+    background: transparent;
+    border: 2px solid #4CAF50;
+    color: #2e7d32;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.perfil-configuraciones-modificaciones button:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.titulo-config { 
+  text-align: center; 
+  font-size: 20px; 
+  color: #2e7d32; 
+  margin-bottom: 10px; 
+  margin-top: 0; 
+}
+
+/* =========================
+   NOTIFICACIÓN TIPO CARRITO
+========================= */
+
+.mensaje-exito-perfil,
+.mensaje-error-perfil {
+    position: fixed;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    animation: fadeOutPerfil 4s forwards;
+    max-width: 350px;
+    width: fit-content;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- ÉXITO --- */
+.noti-exito-cambio-perfil {
+    background-color: #000;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 14px 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.noti-exito-cambio-perfil::before {
+    content: "✅";
+    font-size: 18px;
+}
+
+/* --- ERROR --- */
+.noti-error-cambios-perfil {
+    background-color: #000;
+    color: #E53935;
+    border: 2px solid #E53935;
+    padding: 14px 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    font-size: 16px;
+}
+
+.noti-error-cambios-perfil::before {
+    content: "x";
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.noti-error-cambios-perfil ul {
+    margin: 6px 0 0 0;
+    padding-left: 20px;
+}
+
+/* --- Animación de salida --- */
+@keyframes fadeOutPerfil {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
